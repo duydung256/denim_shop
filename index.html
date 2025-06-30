@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denim Boutique</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#000000', secondary: '#333333' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-white">
+    <!-- Header Navigation -->
+    <header class="w-full bg-white border-b border-gray-100 relative z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="img/logo.svg" alt="Logo" class="h-12">
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-sm font-medium relative cursor-pointer group">
+                    <span class="relative z-10 transition-colors duration-300 group-hover:text-primary">ホーム</span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#collection" class="text-sm font-medium relative cursor-pointer group">
+                    <span class="relative z-10 transition-colors duration-300 group-hover:text-primary">商品</span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+
+                <a href="#testimonials" class="text-sm font-medium relative cursor-pointer group">
+                    <span class="relative z-10 transition-colors duration-300 group-hover:text-primary">レビュー </span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#faq" class="text-sm font-medium relative cursor-pointer group">
+                    <span class="relative z-10 transition-colors duration-300 group-hover:text-primary">質問</span>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div
+                    class="w-6 h-6 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-primary">
+                    <i class="ri-search-line"></i>
+                </div>
+                <div
+                    class="w-6 h-6 flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-primary">
+                    <i class="ri-user-line"></i>
+                </div>
+                <div id="cartIcon"
+                    class="w-6 h-6 flex items-center justify-center cursor-pointer relative transition-transform duration-300 hover:scale-110 hover:text-primary">
+                    <i class="ri-shopping-bag-line"></i>
+                    <span id="cartCount"
+                        class="absolute -top-1 -right-1 bg-primary text-white text-xs w-4 h-4 flex items-center justify-center rounded-full hidden">0</span>
+                    <div id="cartDropdown"
+                        class="absolute top-full right-0 mt-2 w-[380px] bg-white rounded shadow-lg border border-gray-100 hidden z-[999]">
+                        <div id="cartEmpty" class="p-6 text-center">
+                            <div
+                                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-gray-50">
+                                <i class="ri-shopping-bag-line text-2xl text-gray-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">Your shopping bag is empty</p>
+                            <button
+                                class="bg-primary text-white px-6 py-2 text-sm font-medium !rounded-button whitespace-nowrap cursor-pointer">Continue
+                                Shopping</button>
+                        </div>
+                        <div id="cartContent" class="hidden">
+                            <div class="p-4 border-b border-gray-100">
+                                <h3 class="font-medium">Shopping Bag</h3>
+                            </div>
+                            <div id="cartItems" class="max-h-[320px] overflow-y-auto"></div>
+                            <div class="p-4 border-t border-gray-100">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="font-medium">Total</span>
+                                    <span id="cartTotal" class="font-medium">$0.00</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <button
+                                        class="bg-white border border-primary text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg !rounded-button whitespace-nowrap cursor-pointer">View
+                                        Bag</button>
+                                    <button
+                                        class="bg-primary text-white px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg !rounded-button whitespace-nowrap cursor-pointer">Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section w-full h-[500px] relative z-0">
+        <div class="container mx-auto px-4 h-full flex items-center">
+            <div class="w-full md:w-1/2 z-10 hidden md:block">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">スタイルに意味を — <br>あなたを表現する服。</h1>
+                <p class="text-gray-700 mb-6">現代の洗練された個性のために、厳選されたタイムレスなデザインをお届けします。</p>
+
+            </div>
+            <div class="w-full md:w-1/2 z-10 md:hidden flex h-[300px]">
+                <div class="w-1/2 text-left">
+                    <h1 class="text-3xl font-bold text-primary mb-4 leading-snug">スタイルに意味を —</h1>
+                    <p class="text-lg text-gray-700 leading-relaxed">洗練されたデザインで、あなたを表現。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner -->
+    <div id="collection" class="w-full bg-primary text-white py-2">
+        <div class="container mx-auto overflow-hidden">
+            <div class="flex animate-marquee whitespace-nowrap">
+                <span class="mx-4 text-sm font-medium">¥15,000以上のご購入で送料無料</span>
+                <span class="mx-4 text-sm font-medium">秋コレクション発売中</span>
+                <span class="mx-4 text-sm font-medium">新規会員登録で15%オフ</span>
+                <span class="mx-4 text-sm font-medium">サステナブルなライフスタイルのために</span>
+                <span class="mx-4 text-sm font-medium">限定アイテム入荷</span>
+                <span class="mx-4 text-sm font-medium">シグネチャーコレクション</span>
+                <span class="mx-4 text-sm font-medium">メンバーシッププログラム</span>
+                <span class="mx-4 text-sm font-medium">分割払い対応可能</span>
+                <span class="mx-4 text-sm font-medium">45日間返品・交換可能</span>
+                <span class="mx-4 text-sm font-medium">会員限定特典と先行案内</span>
+            </div>
+        </div>
+
+    </div>
+    <!-- Shop By Category -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-4xl font-bold text-primary">コレクション</h2>
+                <button
+                    class="bg-primary text-white px-4 py-2 text-sm font-medium !rounded-button whitespace-nowrap cursor-pointer transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-[1px]">すべて見る</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <div class="h-[450px] overflow-hidden">
+                        <img src="img/collection1.jpg" alt="Knitwear" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-medium text-lg mb-2">ラグジュアリーニット</h3>
+                        <button
+                            class="bg-white border border-primary text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg !rounded-button whitespace-nowrap cursor-pointer">詳しく見る</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <div class="h-[450px] overflow-hidden">
+                        <img src="img/collection2.jpg" alt="Trousers" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-medium text-lg mb-2">テーラードボトムス</h3>
+                        <button
+                            class="bg-white border border-primary text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg !rounded-button whitespace-nowrap cursor-pointer">詳しく見る</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow overflow-hidden">
+                    <div class="h-[450px] overflow-hidden">
+                        <img src="img/collection3.jpg" alt="Smart Casual" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="font-medium text-lg mb-2">モダンアウター</h3>
+                        <button
+                            class="bg-white border border-primary text-primary px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg !rounded-button whitespace-nowrap cursor-pointer">詳しく見る</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Style Revolution -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-primary mb-8">あなただけのスタイルストーリー</h2>
+            <div class="bg-[#f5f5f5] rounded p-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <img src="img/アルチザン.jpg" alt="Crafted Essentials" class="w-full rounded">
+                </div>
+                <div class="md:w-2/3 md:pl-10">
+                    <div class="mb-4">
+                        <h3 class="uppercase font-bold text-3xl mb-2">アルチザン。</h3>
+                        <p class="text-gray-700 text-lg mb-4">洗練された快適な衣服で、あなたのワードローブに新しい価値を。上質な素材と丁寧な職人技で、日常に上質さをお届けします。
+                        </p>
+                        <button
+                            class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap cursor-pointer transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg">コレクションを見る</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Classic Staples -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                <h2 class="text-4xl font-bold text-primary">厳選されたワードローブの必需品</h2>
+            </div>
+            <div class="relative">
+                <div class="overflow-x-auto pb-6 hide-scrollbar" id="scrollContainer">
+                    <div class="flex gap-6 min-w-max">
+                        <div class="w-[400px] bg-white rounded shadow overflow-hidden">
+                            <div class="h-[450px] overflow-hidden">
+                                <img src="img/エッセンシャル ホワイトTシャツ.jpg" alt="エッセンシャル ホワイトTシャツ"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6 flex flex-col h-[240px]">
+                                <h3 class="font-medium text-xl mb-2">エッセンシャル ホワイトTシャツ</h3>
+                                <p class="text-gray-600 mb-6 min-h-[50px]">オーガニックコットンを使用し、exceptional
+                                    な柔らかさと汎用性を兼ね備えた、ワードローブの基礎となるアイテム</p>
+                                <div class="mt-auto mb-4">
+                                    <span class="text-xl font-medium block mb-3">¥3,600</span>
+                                    <button
+                                        class="bg-primary text-white px-6 py-2 text-sm font-medium transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg !rounded-button whitespace-nowrap w-fit cursor-pointer">カートに追加</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[400px] bg-white rounded shadow overflow-hidden">
+                            <div class="h-[450px] overflow-hidden">
+                                <img src="img/シグネチャー 長袖Tシャツ.jpg" alt="Signature Long Sleeve T-Shirt"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6 flex flex-col h-[240px]">
+                                <h3 class="font-medium text-xl mb-2">シグネチャー 長袖Tシャツ</h3>
+                                <p class="text-gray-600 mb-6 min-h-[50px]">洗練されたディテールと快適さを追求した、シグネチャーシルエットのレディースエッセンシャル
+                                </p>
+                                <div class="mt-auto mb-4">
+                                    <span class="text-xl font-medium block mb-3">¥4,800</span>
+                                    <button
+                                        class="bg-primary text-white px-6 py-2 text-sm font-medium transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg !rounded-button whitespace-nowrap w-fit cursor-pointer">カートに追加</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[400px] bg-white rounded shadow overflow-hidden">
+                            <div class="h-[450px] overflow-hidden">
+                                <img src="img/ミニマリスト パーカー.jpg" alt="Minimalist Hoodie"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6 flex flex-col h-[240px]">
+                                <h3 class="font-medium text-xl mb-2">ミニマリスト パーカー</h3>
+                                <p class="text-gray-600 mb-6 min-h-[50px]">サステナブルなコットンブレンド素材を使用し、どんなスタイルにも馴染む永続的な必需品</p>
+                                <div class="mt-auto mb-4">
+                                    <span class="text-xl font-medium block mb-3">¥8,400</span>
+                                    <button
+                                        class="bg-primary text-white px-6 py-2 text-sm font-medium transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg !rounded-button whitespace-nowrap w-fit cursor-pointer">カートに追加</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[400px] bg-white rounded shadow overflow-hidden">
+                            <div class="h-[450px] overflow-hidden">
+                                <img src="img/モダン クルーネック.jpg" alt="Modern Crewneck" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6 flex flex-col h-[240px]">
+                                <h3 class="font-medium text-xl mb-2">モダン クルーネック</h3>
+                                <p class="text-gray-600 mb-6 min-h-[50px]">
+                                    オリジナルの素材ブレンドで作られた、比類のない快適さを実現。オールシーズン活躍する理想的なレイヤリングアイテム</p>
+                                <div class="mt-auto mb-4">
+                                    <span class="text-xl font-medium block mb-3">¥7,200</span>
+                                    <button
+                                        class="bg-primary text-white px-6 py-2 text-sm font-medium transition-all duration-300 hover:bg-opacity-80 hover:shadow-lg !rounded-button whitespace-nowrap w-fit cursor-pointer">カートに追加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-1 bg-gray-200 rounded mt-4">
+                    <div class="absolute h-full bg-primary rounded transition-all duration-300" id="scrollIndicator"
+                        style="width: 25%; left: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Join Community -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <div class="bg-primary text-white p-8 rounded flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">コミュニティに参加して最新トレンドをキャッチ</h2>
+                    <p class="text-gray-200">会員限定オファーやスタイル情報をお届けするニュースレターに登録</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <form class="flex flex-col sm:flex-row">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                                <i class="ri-mail-line text-gray-400"></i>
+                            </div>
+                            <input type="email" placeholder="メールアドレス"
+                                class="pl-11 pr-4 py-3 rounded-l-xl rounded-r-none w-full sm:w-[240px] border-2 border-r-0 border-white/20 bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:border-white/40">
+                        </div>
+                        <button type="submit"
+                            class="bg-white text-primary px-6 py-3 rounded-r-xl rounded-l-none font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer">
+                            登録する
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-primary mb-8">コミュニティの声</h2>
+            <div class="flex justify-end mb-2">
+                <div class="flex items-center">
+                    <div class="flex">
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-fill text-yellow-400"></i>
+                        <i class="ri-star-half-fill text-yellow-400"></i>
+                    </div>
+                    <span class="ml-2 text-sm text-gray-600">4.9/5</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="bg-gray-50 p-6 rounded shadow transition-all duration-300 hover:shadow-md hover:bg-white hover:-translate-y-[2px]">
+                    <div class="mb-4">
+                        <i class="ri-double-quotes-l text-4xl text-[#222222]"></i>
+                        <p class="text-gray-700 mb-4">職人技が素晴らしいの一言です。数シーズンに渡って愛用していますが、形と色が美しく保たれています。間違いなく投資する価値があります！
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">佐藤 健一</p>
+                            <p class="text-sm text-gray-600">認証済みメンバー</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-50 p-6 rounded shadow transition-all duration-300 hover:shadow-md hover:bg-white hover:-translate-y-[2px]">
+                    <div class="mb-4">
+                        <i class="ri-double-quotes-l text-4xl text-[#222222]"></i>
+                        <p class="text-gray-700 mb-4">
+                            これらの服の汎用性の高さに感動しています。カジュアルからフォーマルまで完璧に対応できます。生地は高級感があり、フィット感も抜群です。強くお勧めします！</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">田中 美咲</p>
+                            <p class="text-sm text-gray-600">認証済みメンバー</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-50 p-6 rounded shadow transition-all duration-300 hover:shadow-md hover:bg-white hover:-translate-y-[2px]">
+                    <div class="mb-4">
+                        <i class="ri-double-quotes-l text-4xl text-[#222222]"></i>
+                        <p class="text-gray-700 mb-4">
+                            細部へのこだわりがARTISANを他と区別する特徴です。精密な縫製からサステナブルな包装まで、すべてが品質の高さを物語っています。カスタマーケアも素晴らしいです！</p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                            <i class="ri-user-fill text-gray-500"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">山田 太郎</p>
+                            <p class="text-sm text-gray-600">認証済みメンバー</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-primary mb-8">よくある質問</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4">
+                    <div class="accordion-header flex justify-between items-center bg-white p-4 rounded cursor-pointer">
+                        <h3 class="font-medium">適切なサイズの選び方を教えてください</h3>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line accordion-icon"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content bg-white px-4 rounded-b">
+                        <p class="pb-4 text-gray-600">
+                            各商品ページに詳細なサイズ情報が記載されています。ご自身の採寸値とサイズ表を照らし合わせてください。サイズが迷う場合は、より快適にお召しいただけるよう、大きい方のサイズをお勧めしています。
+                        </p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="accordion-header flex justify-between items-center bg-white p-4 rounded cursor-pointer">
+                        <h3 class="font-medium">サステナブルな製品作りについて</h3>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line accordion-icon"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content bg-white px-4 rounded-b">
+                        <p class="pb-4 text-gray-600">
+                            はい。すべての製品は認証を受けた施設で倫理的に製造されています。サプライチェーン全体を通じて、公平な報酬と安全な労働環境を確保しています。</p>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="accordion-header flex justify-between items-center bg-white p-4 rounded cursor-pointer">
+                        <h3 class="font-medium">返品・交換について</h3>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line accordion-icon"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content bg-white px-4 rounded-b">
+                        <p class="pb-4 text-gray-600">未使用・未開封の商品は45日以内であれば返品可能です。交換も承っております。詳しい手続きについては返品ページをご確認ください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-['Pacifico'] mb-4">ARTISAN</h3>
+                    <p class="text-gray-300 mb-4">Meticulously Crafted Garments That Express Your Identity.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">新着アイテム</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">秋コレクション</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">定番アイテム</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">シグネチャーシリーズ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">サポート</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">よくある質問</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">配送について</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">返品・交換</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">サイズガイド</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">ブランドについて</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">ブランドの歴史</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">サステナビリティ</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">採用情報</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white cursor-pointer">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">© Copyright 2025 ARTISAN. 無断複写・転載を禁じます。</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-instagram-line"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-facebook-line"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-twitter-x-line"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white cursor-pointer">
+                        <div class="w-8 h-8 flex items-center justify-center">
+                            <i class="ri-pinterest-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
