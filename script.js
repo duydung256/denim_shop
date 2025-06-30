@@ -1,5 +1,4 @@
- 
-        document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             const cartIcon = document.getElementById('cartIcon');
             const cartDropdown = document.getElementById('cartDropdown');
@@ -155,6 +154,25 @@
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollContainer = document.getElementById('scrollContainer');
+    const scrollLeftButton = document.getElementById('scrollLeft');
+    const scrollRightButton = document.getElementById('scrollRight');
+
+    scrollLeftButton.addEventListener('click', () => {
+        scrollContainer.scrollBy({
+            left: -300, // Adjust the scroll distance as needed
+            behavior: 'smooth'
+        });
+    });
+
+    scrollRightButton.addEventListener('click', () => {
+        scrollContainer.scrollBy({
+            left: 300, // Adjust the scroll distance as needed
+            behavior: 'smooth'
         });
     });
 });

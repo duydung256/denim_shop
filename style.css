@@ -71,3 +71,10 @@
                     transform: translateX(-50%);
                 }
             }
+
+            @media (max-width: 768px) {
+    #scrollLeft,
+    #scrollRight {
+        display: none;
+    }
+}
