@@ -1,114 +1,114 @@
 # Denim Boutique
 
-A modern, responsive e-commerce website for a premium denim and fashion boutique with Japanese localization.
+日本語対応のプレミアムデニム・ファッションブティックのモダンでレスポンシブなEコマースウェブサイトです。
 
-## Features
+## 主要機能
 
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Japanese Localization**: All content translated to Japanese
-- **Modern UI/UX**: Clean, minimalist design with smooth animations
-- **Interactive Elements**: 
-  - Sticky navigation with smooth scrolling
-  - Horizontal scrolling product gallery with drag support
-  - Shopping cart functionality
-  - Accordion FAQ section
-  - Toast notifications
-- **Performance Optimized**: Efficient CSS and JavaScript implementation
+- **レスポンシブデザイン**: Tailwind CSSを使用したモバイルファーストアプローチ
+- **日本語対応**: すべてのコンテンツが日本語に翻訳済み
+- **モダンなUI/UX**: 滑らかなアニメーションを備えたクリーンでミニマリストなデザイン
+- **インタラクティブ要素**: 
+  - スムーズスクロール対応のスティッキーナビゲーション
+  - ドラッグ対応の水平スクロール商品ギャラリー
+  - ショッピングカート機能
+  - アコーディオン式FAQ セクション
+  - トースト通知
+- **パフォーマンス最適化**: 効率的なCSSとJavaScriptの実装
 
-## Project Structure
+## プロジェクト構造
 
 ```
 denim_shop/
-├── index.html          # Main HTML file
-├── style.css           # Custom CSS styles
-├── script.js           # JavaScript functionality
-├── img/                # Image assets
-│   ├── logo.svg        # Brand logo
-│   ├── favicon2.png    # Favicon
-│   ├── hero.jpg        # Hero background image
-│   ├── collection1.jpg # Collection images
+├── index.html          # メインHTMLファイル
+├── style.css           # カスタムCSSスタイル
+├── script.js           # JavaScript機能
+├── img/                # 画像アセット
+│   ├── logo.svg        # ブランドロゴ
+│   ├── favicon2.png    # ファビコン
+│   ├── hero.jpg        # ヒーロー背景画像
+│   ├── collection1.jpg # コレクション画像
 │   ├── collection2.jpg
 │   ├── collection3.jpg
-│   └── [product-images] # Japanese product images
-└── README.md           # This file
+│   └── [product-images] # 日本語商品画像
+└── README.md           # このファイル
 ```
 
-## Technologies Used
+## 使用技術
 
-- **HTML5**: Semantic markup
-- **CSS3**: Custom styles with Flexbox and Grid
-- **JavaScript**: Vanilla JS for interactivity
-- **Tailwind CSS**: Utility-first CSS framework
-- **Remix Icons**: Icon library
-- **Google Fonts**: Inter and Pacifico fonts
+- **HTML5**: セマンティックマークアップ
+- **CSS3**: FlexboxとGridを使用したカスタムスタイル
+- **JavaScript**: インタラクティブ機能のためのVanilla JS
+- **Tailwind CSS**: ユーティリティファーストCSSフレームワーク
+- **Remix Icons**: アイコンライブラリ
+- **Google Fonts**: InterとPacificoフォント
 
-## Key Components
+## 主要コンポーネント
 
-### Navigation
-- Sticky header with smooth scroll navigation
-- Japanese menu items (ホーム, 商品, レビュー, 質問)
-- Responsive mobile-friendly design
+### ナビゲーション
+- スムーズスクロールナビゲーション対応のスティッキーヘッダー
+- 日本語メニュー項目（ホーム、商品、レビュー、質問）
+- レスポンシブなモバイルフレンドリーデザイン
 
-### Hero Section
-- Full-width background image
-- Responsive text sizing
-- Mobile-optimized layout
+### ヒーローセクション
+- フルワイド背景画像
+- レスポンシブテキストサイズ
+- モバイル最適化レイアウト
 
-### Product Sections
-- Horizontal scrolling gallery
-- Drag-to-scroll functionality
-- Scroll indicator and navigation buttons
-- Hidden scroll buttons on mobile
+### 商品セクション
+- 水平スクロールギャラリー
+- ドラッグ・トゥ・スクロール機能
+- スクロールインジケーターとナビゲーションボタン
+- モバイルでのスクロールボタン非表示
 
-### Shopping Cart
-- Dropdown cart interface
-- Add to cart functionality
-- Toast notifications for user feedback
+### ショッピングカート
+- ドロップダウンカートインターフェース
+- カート追加機能
+- ユーザーフィードバック用トースト通知
 
-### FAQ Section
-- Accordion-style expandable questions
-- Smooth animations
+### FAQセクション
+- アコーディオン式展開可能な質問
+- スムーズアニメーション
 
-## Installation
+## インストール方法
 
-1. Clone or download the project files
-2. Open `index.html` in a web browser
-3. No build process required - runs directly in browser
+1. プロジェクトファイルをクローンまたはダウンロード
+2. ウェブブラウザで `index.html` を開く
+3. ビルドプロセス不要 - ブラウザで直接実行
 
-## Usage
+## 使用方法
 
-The website is fully functional as a static site. Simply open `index.html` in any modern web browser.
+このウェブサイトは静的サイトとして完全に機能します。任意のモダンなウェブブラウザで `index.html` を開くだけです。
 
-## Customization
+## カスタマイズ
 
-### Colors
-Primary colors are defined in the Tailwind configuration:
-- Primary: `#000000` (black)
-- Secondary: `#333333` (dark gray)
+### 色
+プライマリカラーはTailwind設定で定義されています：
+- プライマリ: `#000000` (黒)
+- セカンダリ: `#333333` (ダークグレー)
 
-### Images
-Replace images in the `img/` folder with your own assets. Update the `src` attributes in `index.html` accordingly.
+### 画像
+`img/`フォルダ内の画像を独自のアセットと置き換えてください。`index.html`の`src`属性を適宜更新してください。
 
-### Content
-All text content is in Japanese. Update the HTML content in `index.html` to modify text.
+### コンテンツ
+すべてのテキストコンテンツは日本語です。テキストを変更するには`index.html`のHTMLコンテンツを更新してください。
 
-### Styling
-Additional styles can be added to `style.css` or by modifying Tailwind classes in the HTML.
+### スタイリング
+追加のスタイルは`style.css`に追加するか、HTMLでTailwindクラスを変更することで適用できます。
 
-## Browser Support
+## ブラウザサポート
 
 - Chrome 60+
 - Firefox 55+
 - Safari 12+
 - Edge 79+
 
-## License
+## ライセンス
 
-This project is for educational purposes. Please ensure you have proper licensing for any images or fonts used in production.
+このプロジェクトは教育目的です。本番環境で使用する画像やフォントについては、適切なライセンスを確保してください。
 
-## Contributing
+## 貢献
 
-Feel free to submit issues and enhancement requests!
+問題や機能強化の要求をお気軽にお送りください！
 
 ---
 
